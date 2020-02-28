@@ -9,7 +9,7 @@ import { Reimbursement } from '../models/reimbursement';
 export class ReimbursementService {
 
   constructor(private http: HttpClient) { }
-
+  // 
   // insert(amount:number, description:string, receipt:object, type_id:number, user_id:number ):Observable<Reimbursement>{
   //   let body:any = {
   //     amount: amount,
@@ -35,7 +35,7 @@ export class ReimbursementService {
   //
   //   return this.http.get<Reimbursement>('http://localhost:8080/project-1/reimbursements', body);
   // }
-
+  //
   // statusUpdate(reimbursement_id: number, statusChange: number, resolver_id: number) :Observable<Reimbursement>{
   //   let body ={
   //     resolver: resolver_id,

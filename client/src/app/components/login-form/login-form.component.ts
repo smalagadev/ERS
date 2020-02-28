@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { UserService } from '../../services/user.service';
-import { User } from '../../models/user';
+import { UserService } from './../../services/user.service';
+import { User } from './../../models/user';
 import { Router } from '@angular/router';
 
 @Component({
@@ -26,24 +26,24 @@ export class LoginFormComponent implements OnInit {
     event.preventDefault();
 
     //HTTP Request
-    this.us.login(this.username, this.password).subscribe(
-      (response: User) => {
-        sessionStorage.setItem('currentUser', JSON.stringify(response));
-
-
-        if(response != null){
-          this.username="";
-          this.password="";
-
-          if(response.role_id == 0){
-            this.router.navigate(['/manager_home']); //use to forward to next page
-          }
-          else{
-            this.isLoggedIn = true;
-            this.router.navigate(['/home']); //use to forward to next page
-          }
-        }
-      });
+    // this.us.login(this.username, this.password).subscribe(
+    //   (response: User) => {
+    //     sessionStorage.setItem('currentUser', JSON.stringify(response));
+    //
+    //
+    //     if(response != null){
+    //       this.username="";
+    //       this.password="";
+    //
+    //       if(response.role_id == 0){
+    //         this.router.navigate(['/manager_home']); //use to forward to next page
+    //       }
+    //       else{
+    //         this.isLoggedIn = true;
+    //         this.router.navigate(['/home']); //use to forward to next page
+    //       }
+    //     }
+    //   });
   }
 
 }

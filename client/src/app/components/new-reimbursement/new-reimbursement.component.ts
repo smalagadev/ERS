@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../models/user';
-import { Reimbursement } from '../../models/reimbursement';
-import { ReimbursementService } from '../../services/reimbursement.service';
+import { User } from './../../models/user';
+import { Reimbursement } from './../../models/reimbursement';
+import { ReimbursementService } from './../../services/reimbursement.service';
 
 @Component({
   selector: 'app-new-reimbursement',
@@ -19,7 +19,6 @@ export class NewReimbursementComponent implements OnInit {
     private author: number;
 
   ngOnInit() {
-    const instance = M.FormSelect.getInstance(document.getElementById("type"));
     this.author = JSON.parse(sessionStorage.getItem("currentUser")).id;
   }
 
@@ -31,24 +30,24 @@ export class NewReimbursementComponent implements OnInit {
   }
 
   onSubmit(){
-    if( this.amount > 0){
-      if(this.type != undefined){
-        if(this.receipt!=undefined){
-          alert("Reimbursement Submitted");
-          this.rs.insert(this.amount, this.description, this.receipt, Number(this.type), JSON.parse(sessionStorage.getItem("currentUser")).id).subscribe(
-            (response) =>{
-              console.log(response);
-            });
-        }
-        else{
-          alert("Select a Category");
-        }
-      }
-      else{
-        alert("File is required");
-      }
-    }else{
-      alert("Amount must be greater than $0.00");
-    }
+    // if( this.amount > 0){
+    //   if(this.type != undefined){
+    //     if(this.receipt!=undefined){
+    //       alert("Reimbursement Submitted");
+    //       this.rs.insert(this.amount, this.description, this.receipt, Number(this.type), JSON.parse(sessionStorage.getItem("currentUser")).id).subscribe(
+    //         (response) =>{
+    //           console.log(response);
+    //         });
+    //     }
+    //     else{
+    //       alert("Select a Category");
+    //     }
+    //   }
+    //   else{
+    //     alert("File is required");
+    //   }
+    // }else{
+    //   alert("Amount must be greater than $0.00");
+    // }
   }
 }

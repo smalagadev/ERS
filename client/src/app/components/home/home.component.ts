@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HistoryComponent } from '../history/history.component';
-import { NewReimbursementComponent } from '../new-reimbursement/new-reimbursement.component';
-import { User } from '../../models/user';
+import { HistoryComponent } from './../history/history.component';
+import { NewReimbursementComponent } from './../new-reimbursement/new-reimbursement.component';
+import { User } from './../../models/user';
 import { Router } from '@angular/router';
 
 @Component({

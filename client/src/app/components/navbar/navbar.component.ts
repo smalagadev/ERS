@@ -1,4 +1,5 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,26 +9,13 @@ import { Component, OnInit  } from '@angular/core';
 
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    isLoggedIn = JSON.parse(sessionStorage.getItem("currentUser")) != null ? true : false;
 
-    if(isLoggedIn){
-      this.first_name = JSON.parse(sessionStorage.getItem("currentUser")).first_name;
-      this.last_name = JSON.parse(sessionStorage.getItem("currentUser")).last_name;
-    }
   }
 
-  private first_name: string = "";
-  private last_name: string = "";
+  logout(): void{
 
-
-
-  logoutForm(): void{
-    const logoutForm = document.getElementById('Logout');
-    // Returns error because TypeScript does not recognize Materialize CDN in HTML file
-    const instances = M.Modal.init(logoutForm);
   }
-
 }

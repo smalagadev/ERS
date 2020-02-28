@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ERS';
 
-  public isLoggedIn: boolean;
+  // public isLoggedIn: boolean;
 }
